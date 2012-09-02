@@ -1,0 +1,34 @@
+<!-- <a href="#/" class="button">&larr; Back</a> -->
+
+<h3>Entries for <strong data-bind="text: selectedDate().format('MM/DD/YYYY')"></strong>:</h3>
+
+<!-- ko if: entries().length === 0 -->
+<p>No entries for given date.</p>
+<!-- /ko -->
+
+<div class="entries" data-bind="foreach: entries">
+  <div class="entry">
+    <a href="#" class="button" data-bind="click: $parent.removeEntry">Remove</a>
+    <h4 data-bind="text: activity"></h4>
+    <p>
+      Set: <strong data-bind="text: set"></strong>
+      Rep: <strong data-bind="text: rep"></strong>
+      Value: <strong data-bind="text: value"></strong>
+    </p>
+    <p class="note" data-bind="text: note, visible: note() != ''"></p>
+  </div>
+</div>
+
+<div class="new-entry" data-bind="css: { active: newEntryFormState }, event: { swipedown: toggleNewEntryForm }">
+  <h3 data-bind="click: toggleNewEntryForm">Add new entry</h3>
+
+  <form data-bind="with: newEntry, submit: addEntry">
+    <input type="text" placeholder="Pull down machine" data-bind="value: activity">
+    <input type="number" placeholder="3" data-bind="value: set">
+    <input type="number" placeholder="15" data-bind="value: rep">
+    <input type="number" placeholder="67kg" data-bind="value: value">
+    <input type="text" placeholder="Everything went better then expected" data-bind="value: note">
+
+    <button class="button">Save entry</button>
+  </form>
+</div>

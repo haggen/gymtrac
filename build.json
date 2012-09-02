@@ -1,0 +1,25 @@
+{
+  "watch": true,
+  "compress": false,
+  "scripts": {
+    "output": "public/all.js",
+    "input": [
+      "public/js/jquery.js",
+      "public/js/cookies.js",
+      "public/js/way.js",
+      "public/js/knockout.js",
+      "public/js/ko.resource.js",
+      "public/js/ko.app.js",
+      "public/js/moment.js",
+      "public/js/application.js"
+    ]
+  },
+  "styles": {
+    "output": "public/all.css",
+    "input": [
+      "public/css/normalize.css",
+      "public/css/h5bp.css",
+      "public/css/style.css"
+    ]
+  }
+}

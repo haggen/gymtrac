@@ -1,0 +1,193 @@
+
+body {
+  color: #222;
+  font-family: Open\ Sans, sans-serif;
+}
+
+a,
+a:visited {
+  color: #467;
+}
+
+a:hover,
+a:active {
+  color: #79a;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre, table, form {
+  margin-top: 0;
+}
+
+header {
+  background: #245;
+  border-bottom: 1px dashed #fff;
+  line-height: 2;
+  padding: 0 1em;
+}
+
+header h1 {
+  font-size: 1.4em;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #000;
+}
+
+header h1 a,
+header h1 a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+header h1 a:hover,
+header h1 a:active {
+  color: #cef;
+}
+
+.content {
+  padding: 1em;
+}
+
+.button {
+  background: #cef;
+  border-radius: 2px;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, .8);
+  display: inline-block;
+  padding: 1em;
+}
+
+.button:hover {
+  background: #cceeff;
+}
+
+input.button,
+button.button {
+  border: 0;
+  color: #467;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+input.button:hover,
+button.button:hover {
+  color: #79a;
+}
+
+.loading {
+  background: url(../images/loading.gif) no-repeat center;
+  padding-top: 2.4em;
+  text-align: center
+}
+
+.calendar {
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, .2);
+  border-radius: 2px;
+  margin-bottom: 1em;
+  overflow: auto;
+  overflow-y: hidden;
+  -ms-overflow-y: hidden;
+  width: 100%;
+}
+
+.calendar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.calendar li {
+  border-right: 1px dashed rgba(0, 0, 0, .2);
+  display: inline-block;
+}
+
+.calendar a {
+  color: inherit;
+  display: inline-block;
+  padding: 1em;
+  text-decoration: none;
+  -webkit-transition: color .2;
+}
+
+.calendar li.active a {
+  color: #79a;
+}
+
+.calendar ul li:last-child {
+  border-right: 0;
+}
+
+.entries {
+  margin-bottom: 3.6em;
+}
+
+.entry {
+  border-radius: 2px;
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, .2);
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.entry a {
+  font-size: .8em;
+  float: right;
+}
+
+.entry p,
+.entry h4 {
+  margin: 0;
+}
+
+.entry p {
+  font-size: .8em;
+}
+
+.entry .note {
+  color: #888;
+}
+
+.new-entry {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+  bottom: 0;
+  left: 0;
+  height: 1.5em;
+  overflow: hidden;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  -webkit-transition: height .2s;
+}
+
+.new-entry h3 {
+  cursor: pointer;
+}
+
+.new-entry h3:after {
+  content: "\2191";
+  float: right;
+}
+
+.new-entry.active h3:after {
+  content: "\2193";
+}
+
+.new-entry:hover {
+  height: 1.9em;
+}
+
+.new-entry.active {
+  height: 19em;
+}
+
+.new-entry input {
+  border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .3);
+  display: block;
+  margin-bottom: .4em;
+  padding: .4em;
+  width: 15em;
+  -webkit-appearance: none;
+}
+
+.new-entry input:focus {
+  outline: none;
+}
