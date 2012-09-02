@@ -25,8 +25,6 @@ ko.app(function() {
         current_user = new User({ _id: app.session('current_user') });
 
         current_user.fetch(function(user) {
-          console.log('User', user);
-
           if(user) {
             app.redirect(app.path);
           } else {

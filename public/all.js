@@ -1,4 +1,4 @@
-/* 1346560821000 */
+/* 1346564465000 */
 /*!
  * jQuery JavaScript Library v1.8.0
  * http://jquery.com/
@@ -12876,14 +12876,19 @@ ko.exportSymbol('nativeTemplateEngine', ko.nativeTemplateEngine);
 
   // Make AJAX request
   request = function(verb, path, params, callback) {
-    var options = {
+    var options;
+
+    if(callback === undefined) {
+      callback = params;
+      params = {};
+    }
+
+    options = {
       url: path,
       type: verb,
       data: params,
       success: callback
     };
-
-    console.log('Request', options);
 
     $.ajax(options);
   };
@@ -14313,8 +14318,6 @@ ko.app(function() {
         current_user = new User({ _id: app.session('current_user') });
 
         current_user.fetch(function(user) {
-          console.log('User', user);
-
           if(user) {
             app.redirect(app.path);
           } else {

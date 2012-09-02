@@ -9,7 +9,7 @@ require('buildjs')(__dirname);
 http = express();
 http.use(express.static(__dirname + '/public'));
 http.use(express.bodyParser());
-http.user(express.logger());
+http.use(express.logger());
 http.listen(process.env.PORT);
 
 mongofoo.connect(process.env.DATABASE_URL);
