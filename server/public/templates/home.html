@@ -1,0 +1,20 @@
+<p>Welcome back <strong data-bind="text: current_user.name"></strong>! Please select a date below to begin registering your activities in the gym.</p>
+
+
+<label>
+  <input type="checkbox" data-bind="checked: showOnlyActiveDates">
+  Show only dates with entries
+</label>
+
+<div class="calendar" data-bind="event: { scroll: calendarScrollHandler }">
+  <ul data-bind="foreach: calendar, style: { width: calendar().length * 122 + 'px' }">
+    <li data-bind="css: { active: $data.active }, if: $parent.showOnlyActiveDates() && $data.active() || !$parent.showOnlyActiveDates()">
+      <a href="#" data-bind="attr: { href: '#/calendar/' + $data.format('YYYY-MM-DD') }">
+        <small data-bind="text: $data.format('dddd')"></small>
+        <span data-bind="text: $data.format('MM/DD/YYYY')"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<a href="#" class="button" data-bind="visible: showBackToTodayButton, click: backToToday">&larr; Back to today...</a>

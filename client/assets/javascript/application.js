@@ -18,20 +18,20 @@ ko.app(function() {
   app = this;
 
   app.map('#/(calendar/*)', function(context) {
-    if(app.session('current_user') === undefined) {
+    var current_user_id = app.session('current_user');
+
+    if(current_user_id === undefined) {
       app.redirect('#/login');
     } else {
-      if(current_user === undefined) {
-        current_user = new User({ _id: app.session('current_user') });
+      if(!current_user) {
+        current_user = new User({ _id: current_user_id });
 
-        current_user.fetch(function(user) {
-          if(user) {
-            app.redirect(app.path);
-          } else {
-            context.flash = ko.observable('Ops! There was an error during your login, please try again.');
+        current_user.fetch(function(response) {
+          if(!response) {
             app.session('current_user', null);
-            app.redirect('#/login');
           }
+
+          app.dispatch(true);
         });
 
         app.render('loading');
@@ -50,8 +50,8 @@ ko.app(function() {
 
     context.addCalendarRetroDates = function(start, dates) {
       if(dates > 0) {
-        context.calendar.push(start);
         start.active = ko.observable(false);
+        context.calendar.push(start);
         Entry.fetch({ author: current_user._id(), created_at: start.format('YYYY-MM-DD') }, function(entries) {
           if(entries.length > 0) {
             start.active(true);
@@ -78,6 +78,8 @@ ko.app(function() {
     context.backToToday = function() {
       $('div.calendar').animate({scrollLeft: 0}, 200);
     };
+
+    context.showOnlyActiveDates = ko.observable(false);
 
     context.showBackToTodayButton = ko.observable(false);
 

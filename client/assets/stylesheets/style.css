@@ -18,6 +18,16 @@ h1, h2, h3, h4, h5, h6, p, pre, table, form {
   margin-top: 0;
 }
 
+a + p {
+  margin-top: 1em;
+}
+
+label {
+  display: inline-block;
+  font-size: .9em;
+  margin-bottom: 1em;
+}
+
 header {
   background: #245;
   border-bottom: 1px dashed #fff;
@@ -102,8 +112,14 @@ button.button:hover {
   color: inherit;
   display: inline-block;
   padding: 1em;
+  text-align: center;
   text-decoration: none;
   -webkit-transition: color .2;
+}
+
+.calendar a small {
+  color: #999;
+  display: block;
 }
 
 .calendar li.active a {
@@ -148,7 +164,7 @@ button.button:hover {
   box-shadow: 0 0 8px rgba(0, 0, 0, .3);
   bottom: 0;
   left: 0;
-  height: 1.5em;
+  height: 1.4em;
   overflow: hidden;
   padding: 1em;
   position: fixed;
@@ -170,7 +186,7 @@ button.button:hover {
 }
 
 .new-entry:hover {
-  height: 1.9em;
+  height: 1.8em;
 }
 
 .new-entry.active {
@@ -184,7 +200,7 @@ button.button:hover {
   display: block;
   margin-bottom: .4em;
   padding: .4em;
-  width: 15em;
+  width: 16em;
   -webkit-appearance: none;
 }
 

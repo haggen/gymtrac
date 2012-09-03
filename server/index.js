@@ -4,8 +4,6 @@ _ = require('underscore');
 express = require('express');
 mongofoo = require('mongofoo');
 
-require('buildjs')(__dirname);
-
 http = express();
 http.use(express.static(__dirname + '/public'));
 http.use(express.bodyParser());
